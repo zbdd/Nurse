@@ -3,10 +3,6 @@
 
 // Inherit the parent event
 event_inherited();
-name = "OBS Machine"
-hoverover = false
-patient = noone
-progressbar = noone
-
+name = "Patient notes"
 last_hr = "xx"
 last_bp = "xx"

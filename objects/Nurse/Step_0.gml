@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+for(var xx=0;xx<ds_list_size(equipped);xx++) {
+	equipped[| xx].x = x - 20 + (xx*40)
+	equipped[| xx].y = y + 20
+}
+
 var event = instance_position(x,y,Event)
 
 if(event != noone) {
@@ -39,15 +44,34 @@ if(first_interact == second_interact and second_interact != noone) {
 				
 	switch (second_interact.object_index) {
 		case OBS_Machine:
-			with (second_interact) { 
-				if (!follow) { log_text = "Collected "; follow = other  }
-				else { log_text = "Let go of "; follow = noone  }
+			var found = ds_list_find_index(equipped,second_interact)
+			if(found) {
+				log_text = "Unequipped "
+				ds_list_delete(equipped,found)
 			}
+			else {
+				log_text = "Equipped "
+				ds_list_add(equipped,second_interact)
+			}
+			break;
 		break;
 		
 		case I_Handwash:
 			dialog_open = progressbar_create(60)
 		break;
+		
+		case I_Notes:
+			var found = ds_list_find_index(equipped,second_interact)
+			if(found) {
+				log_text = "Unequipped "
+				ds_list_delete(equipped,found)
+			}
+			else {
+				log_text = "Equipped "
+				ds_list_add(equipped,second_interact)
+			}
+			break;
+				
 	}
 	
 	log_text += second_interact.name
@@ -70,6 +94,13 @@ if(first_interact != second_interact and second_interact != noone and first_inte
 				dialog_open = progressbar_create(60)
 				first_interact.patient = second_interact
 				first_interact.progressbar = dialog_open
+			}
+			
+			if(first_interact.object_index == OBS_Machine and second_interact.object_index == I_Notes) {
+				dialog_open = progressbar_create(60)
+				first_interact.progressbar = dialog_open
+				second_interact.last_hr = first_interact.last_hr
+				second_interact.last_bp = first_interact.last_bp
 			}
 		}
 		
