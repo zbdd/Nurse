@@ -2,6 +2,7 @@
 // You can write your code in this editor
 move_speed = 3
 dialog_open = noone
+on_dialog_close = ""
 events = ds_list_create()
 min_interact_dist = 20
 equipped = ds_list_create()

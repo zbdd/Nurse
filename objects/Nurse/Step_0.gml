@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(!instance_exists(dialog_open) and on_dialog_close != "") {
+	log_create(on_dialog_close, events)
+	
+	on_dialog_close = ""
+}
+
 var event = instance_position(x,y,Event)
 
 if(event != noone) {
@@ -43,7 +49,10 @@ if(first_interact == second_interact and second_interact != noone) {
 				if (!follow) { log_text = "Collected "; follow = other  }
 				else { log_text = "Let go of "; follow = noone  }
 			}
-			
+		break;
+		
+		case I_Handwash:
+			dialog_open = progressbar_create(60)
 		break;
 	}
 	
@@ -55,19 +64,19 @@ if(first_interact == second_interact and second_interact != noone) {
 }
 
 // If you clicked one object and dragged to another
-if(first_interact != second_interact and second_interact != noone) {
-	if ((distance_to_object(first_interact) <= first_interact.min_interact_dist) 
-		and (distance_to_object(second_interact) <= second_interact.min_interact_dist)) {
-			var log_text = ""
-			log_text = first_interact.name + " interacts with " + second_interact.name
-			log_create(log_text,events)	
-	}
+if(first_interact != second_interact and second_interact != noone and first_interact != noone) {
+	if(object_is_ancestor(second_interact.object_index,Interact))
+		if ((distance_to_object(first_interact) <= first_interact.min_interact_dist) 
+			and (distance_to_object(second_interact) <= second_interact.min_interact_dist)) {
+				var log_text = ""
+				log_text = first_interact.name + " interacts with " + second_interact.name
+				log_create(log_text,events)	
 	
-	if(first_interact.object_index == OBS_Machine and second_interact.object_index == Bed) {
-		dialog_open = instance_create_depth(x,y,0,Progress_Bar)
-		dialog_open.time = 60
-	}
-	
+			if(first_interact.object_index == OBS_Machine and second_interact.object_index == Bed) {
+				dialog_open = progressbar_create(60)
+				on_dialog_close = "OBS taken"
+			}
+		}
 	first_interact = noone
 	second_interact = noone
 }

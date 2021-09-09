@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"I_Handwash","path":"objects/I_Handwash/I_Handwash.yy",},"order":2,},
     {"id":{"name":"Spr_Handwash","path":"sprites/Spr_Handwash/Spr_Handwash.yy",},"order":5,},
+    {"id":{"name":"progressbar_create","path":"scripts/progressbar_create/progressbar_create.yy",},"order":1,},
     {"id":{"name":"Event","path":"objects/Event/Event.yy",},"order":0,},
     {"id":{"name":"Spr_OBS_Machine","path":"sprites/Spr_OBS_Machine/Spr_OBS_Machine.yy",},"order":6,},
     {"id":{"name":"Spr_Wall","path":"sprites/Spr_Wall/Spr_Wall.yy",},"order":4,},
