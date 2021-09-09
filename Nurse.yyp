@@ -14,6 +14,7 @@
     {"id":{"name":"Spr_Nurse","path":"sprites/Spr_Nurse/Spr_Nurse.yy",},"order":0,},
     {"id":{"name":"Bed","path":"objects/Bed/Bed.yy",},"order":1,},
     {"id":{"name":"Log","path":"objects/Log/Log.yy",},"order":6,},
+    {"id":{"name":"Progress_Bar","path":"objects/Progress_Bar/Progress_Bar.yy",},"order":8,},
     {"id":{"name":"Nurse","path":"objects/Nurse/Nurse.yy",},"order":0,},
     {"id":{"name":"Spr_Bed","path":"sprites/Spr_Bed/Spr_Bed.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},

@@ -43,6 +43,7 @@ if(first_interact == second_interact and second_interact != noone) {
 				if (!follow) { log_text = "Collected "; follow = other  }
 				else { log_text = "Let go of "; follow = noone  }
 			}
+			
 		break;
 	}
 	
@@ -59,14 +60,19 @@ if(first_interact != second_interact and second_interact != noone) {
 		and (distance_to_object(second_interact) <= second_interact.min_interact_dist)) {
 			var log_text = ""
 			log_text = first_interact.name + " interacts with " + second_interact.name
-			log_create(log_text,events)
-		}
+			log_create(log_text,events)	
+	}
+	
+	if(first_interact.object_index == OBS_Machine and second_interact.object_index == Bed) {
+		dialog_open = instance_create_depth(x,y,0,Progress_Bar)
+		dialog_open.time = 60
+	}
 	
 	first_interact = noone
 	second_interact = noone
 }
 
-if (!dialog_open) {
+if (!instance_exists(dialog_open)) {
 	
 	var xx = 0
 	var yy = 0
