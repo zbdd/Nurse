@@ -5,3 +5,9 @@
 event_inherited();
 name = "OBS Machine"
 follow = noone
+hoverover = false
+patient = noone
+progressbar = noone
+
+last_hr = "xx"
+last_bp = "xx"

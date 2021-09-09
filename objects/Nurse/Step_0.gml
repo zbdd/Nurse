@@ -1,12 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(!instance_exists(dialog_open) and on_dialog_close != "") {
-	log_create(on_dialog_close, events)
-	
-	on_dialog_close = ""
-}
-
 var event = instance_position(x,y,Event)
 
 if(event != noone) {
@@ -74,9 +68,11 @@ if(first_interact != second_interact and second_interact != noone and first_inte
 	
 			if(first_interact.object_index == OBS_Machine and second_interact.object_index == Bed) {
 				dialog_open = progressbar_create(60)
-				on_dialog_close = "OBS taken"
+				first_interact.patient = second_interact
+				first_interact.progressbar = dialog_open
 			}
 		}
+		
 	first_interact = noone
 	second_interact = noone
 }
