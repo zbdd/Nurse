@@ -4,5 +4,4 @@
 // Inherit the parent event
 event_inherited();
 name = "OBS Machine"
-min_interact_dist = 20
 follow = noone

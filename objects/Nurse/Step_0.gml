@@ -6,12 +6,7 @@ var event = instance_position(x,y,Event)
 if(event != noone) {
 	if(event.active) {
 		event.active = false
-		var log = instance_create_depth(x,y,0,Log)
-		log.name = event.name
-		log.time = string(current_minute) + "/" + string(current_hour)
-		
-		ds_list_add(events,log)
-		log = noone
+		log_create(event.name,events)
 	}
 }
 
@@ -40,28 +35,35 @@ if(first_interact == second_interact and second_interact != noone) {
 		uses++
 	}
 				
-	var log = instance_create_depth(x,y,0,Log) 
+	var log_text = ""
 				
 	switch (second_interact.object_index) {
 		case OBS_Machine:
 			with (second_interact) { 
-				if (!follow) { log.name = "Collected "; follow = other  }
-				else { log.name = "Let go of "; follow = noone  }
+				if (!follow) { log_text = "Collected "; follow = other  }
+				else { log_text = "Let go of "; follow = noone  }
 			}
 		break;
 	}
-				
-	log.name += second_interact.name
-	log.time = string(current_minute) + "/" + string(current_hour)
-	ds_list_add(events,log)
-	log = noone
+	
+	log_text += second_interact.name
+	log_create(log_text,events)
 	
 	first_interact = noone
 	second_interact = noone
 }
+
 // If you clicked one object and dragged to another
 if(first_interact != second_interact and second_interact != noone) {
+	if ((distance_to_object(first_interact) <= first_interact.min_interact_dist) 
+		and (distance_to_object(second_interact) <= second_interact.min_interact_dist)) {
+			var log_text = ""
+			log_text = first_interact.name + " interacts with " + second_interact.name
+			log_create(log_text,events)
+		}
 	
+	first_interact = noone
+	second_interact = noone
 }
 
 if (!dialog_open) {

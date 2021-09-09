@@ -3,4 +3,4 @@
 name = "Default Interact Name"
 uses = 0
 interactable = true
-interact = false
+min_interact_dist = 20

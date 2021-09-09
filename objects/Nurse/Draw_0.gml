@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+draw_self()
+
 draw_set_colour(c_black)
 draw_text(20,5,"Event log")
 for(var xx=0;xx<ds_list_size(events);xx++) {
@@ -8,7 +11,6 @@ for(var xx=0;xx<ds_list_size(events);xx++) {
 
 if(mouse_check_button(mb_left) and first_interact) {
 	draw_set_colour(c_yellow)
-	draw_line(first_interact.x,first_interact.y,mouse_x,mouse_y)	
+	draw_line_width(first_interact.x,first_interact.y,mouse_x,mouse_y,3)	
 }
 
-draw_self()

@@ -5,6 +5,7 @@
     {"id":{"name":"Event","path":"objects/Event/Event.yy",},"order":0,},
     {"id":{"name":"Spr_OBS_Machine","path":"sprites/Spr_OBS_Machine/Spr_OBS_Machine.yy",},"order":6,},
     {"id":{"name":"Spr_Wall","path":"sprites/Spr_Wall/Spr_Wall.yy",},"order":4,},
+    {"id":{"name":"log_create","path":"scripts/log_create/log_create.yy",},"order":0,},
     {"id":{"name":"Interact","path":"objects/Interact/Interact.yy",},"order":0,},
     {"id":{"name":"OBS_Machine","path":"objects/OBS_Machine/OBS_Machine.yy",},"order":1,},
     {"id":{"name":"Spr_Event","path":"sprites/Spr_Event/Spr_Event.yy",},"order":3,},
@@ -59,7 +60,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.3.570",
+    "IDEVersion": "2.3.3.574",
   },
   "resourceVersion": "1.4",
   "name": "Nurse",
