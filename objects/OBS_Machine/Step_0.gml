@@ -5,7 +5,15 @@ if(inst_obj) {
 		if(progressbar == noone) progressbar = progressbar_create(60)
 		if(!instance_exists(progressbar)) {
 			obs = observations_create(inst_obj)
-
+			
+			inst_obj = noone
+			progressbar = noone
+		}
+	}
+	else if (inst_obj.object_index == Notes) {
+		if(obs != noone) {
+			show_debug_message("NOTES")
+			ds_list_add(inst_obj.obs,obs)
 			inst_obj = noone
 			progressbar = noone
 		}

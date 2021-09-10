@@ -51,7 +51,7 @@ if(first_interact == second_interact and second_interact != noone) {
 			dialog_open = progressbar_create(60)
 		break;
 		
-		case I_Notes:
+		case Notes:
 			nurse_equip_item(self,second_interact)
 		break;
 				

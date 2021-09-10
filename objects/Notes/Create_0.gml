@@ -4,5 +4,4 @@
 // Inherit the parent event
 event_inherited();
 name = "Patient notes"
-last_hr = "xx"
-last_bp = "xx"
+obs = ds_list_create()

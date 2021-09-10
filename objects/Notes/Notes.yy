@@ -35,7 +35,7 @@
     "path": "folders/Objects/Interacts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "I_Notes",
+  "name": "Notes",
   "tags": [],
   "resourceType": "GMObject",
 }
