@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"nurse_equip_item","path":"scripts/nurse_equip_item/nurse_equip_item.yy",},"order":3,},
     {"id":{"name":"I_Handwash","path":"objects/I_Handwash/I_Handwash.yy",},"order":2,},
     {"id":{"name":"Spr_Handwash","path":"sprites/Spr_Handwash/Spr_Handwash.yy",},"order":5,},
     {"id":{"name":"progressbar_create","path":"scripts/progressbar_create/progressbar_create.yy",},"order":1,},

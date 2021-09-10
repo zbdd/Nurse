@@ -44,16 +44,7 @@ if(first_interact == second_interact and second_interact != noone) {
 				
 	switch (second_interact.object_index) {
 		case OBS_Machine:
-			var found = ds_list_find_index(equipped,second_interact)
-			if(found) {
-				log_text = "Unequipped "
-				ds_list_delete(equipped,found)
-			}
-			else {
-				log_text = "Equipped "
-				ds_list_add(equipped,second_interact)
-			}
-			break;
+			nurse_equip_item(self,second_interact)
 		break;
 		
 		case I_Handwash:
@@ -61,21 +52,10 @@ if(first_interact == second_interact and second_interact != noone) {
 		break;
 		
 		case I_Notes:
-			var found = ds_list_find_index(equipped,second_interact)
-			if(found) {
-				log_text = "Unequipped "
-				ds_list_delete(equipped,found)
-			}
-			else {
-				log_text = "Equipped "
-				ds_list_add(equipped,second_interact)
-			}
-			break;
+			nurse_equip_item(self,second_interact)
+		break;
 				
 	}
-	
-	log_text += second_interact.name
-	log_create(log_text,events)
 	
 	first_interact = noone
 	second_interact = noone
