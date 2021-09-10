@@ -4,3 +4,4 @@ name = "Default Interact Name"
 uses = 0
 interactable = true
 min_interact_dist = 20
+inst_obj = noone

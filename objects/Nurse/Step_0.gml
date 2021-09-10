@@ -70,19 +70,10 @@ if(first_interact != second_interact and second_interact != noone and first_inte
 				log_text = first_interact.name + " interacts with " + second_interact.name
 				log_create(log_text,events)	
 	
-			if(first_interact.object_index == OBS_Machine and second_interact.object_index == Bed) {
-				dialog_open = progressbar_create(60)
-				first_interact.patient = second_interact
-				first_interact.progressbar = dialog_open
+				if(variable_instance_exists(first_interact,"inst_obj")) {
+						first_interact.inst_obj = second_interact
+				}
 			}
-			
-			if(first_interact.object_index == OBS_Machine and second_interact.object_index == I_Notes) {
-				dialog_open = progressbar_create(60)
-				first_interact.progressbar = dialog_open
-				second_interact.last_hr = first_interact.last_hr
-				second_interact.last_bp = first_interact.last_bp
-			}
-		}
 		
 	first_interact = noone
 	second_interact = noone
