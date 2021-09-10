@@ -12,7 +12,6 @@ if(inst_obj) {
 	}
 	else if (inst_obj.object_index == Notes) {
 		if(obs != noone) {
-			show_debug_message("NOTES")
 			ds_list_add(inst_obj.obs,obs)
 			inst_obj = noone
 			progressbar = noone

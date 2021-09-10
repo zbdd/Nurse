@@ -47,8 +47,9 @@ if(first_interact == second_interact and second_interact != noone) {
 			nurse_equip_item(self,second_interact)
 		break;
 		
-		case I_Handwash:
+		case Hand_Sanitiser:
 			dialog_open = progressbar_create(60)
+			log_create("Hand sanitised",events)
 		break;
 		
 		case Notes:

@@ -33,7 +33,7 @@
     "path": "folders/Objects/Interacts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "I_Handwash",
+  "name": "Hand_Sanitiser",
   "tags": [],
   "resourceType": "GMObject",
 }
