@@ -6,14 +6,14 @@ for(var xx=0;xx<ds_list_size(equipped);xx++) {
 	equipped[| xx].y = y + 20
 }
 
-var event = instance_position(x,y,Event)
+/*var event = instance_position(x,y,Event)
 
 if(event != noone) {
 	if(event.active) {
 		event.active = false
 		log_create(event.name,events)
 	}
-}
+}*/
 
 var interact = instance_position(mouse_x,mouse_y,Interact)
 
@@ -49,7 +49,7 @@ if(first_interact == second_interact and second_interact != noone) {
 		
 		case Hand_Sanitiser:
 			dialog_open = progressbar_create(60)
-			log_create("Hand sanitised",events)
+			log_create("Handwashed",events)
 		break;
 		
 		case Notes:

@@ -10,6 +10,8 @@
     {"id":{"name":"Spr_Wall","path":"sprites/Spr_Wall/Spr_Wall.yy",},"order":4,},
     {"id":{"name":"log_create","path":"scripts/log_create/log_create.yy",},"order":0,},
     {"id":{"name":"Interact","path":"objects/Interact/Interact.yy",},"order":0,},
+    {"id":{"name":"Event_Handler","path":"objects/Event_Handler/Event_Handler.yy",},"order":2,},
+    {"id":{"name":"Game_Setup","path":"objects/Game_Setup/Game_Setup.yy",},"order":10,},
     {"id":{"name":"OBS_Machine","path":"objects/OBS_Machine/OBS_Machine.yy",},"order":1,},
     {"id":{"name":"Spr_Event","path":"sprites/Spr_Event/Spr_Event.yy",},"order":3,},
     {"id":{"name":"E_Handwash","path":"objects/E_Handwash/E_Handwash.yy",},"order":1,},

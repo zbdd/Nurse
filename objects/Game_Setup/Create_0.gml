@@ -1,7 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// Inherit the parent event
-event_inherited();
-name = "Handwash"
-inst=noone
+global.Event_Handler = instance_create_depth(x,y,0,Event_Handler)

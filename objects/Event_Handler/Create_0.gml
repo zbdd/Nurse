@@ -1,7 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// Inherit the parent event
-event_inherited();
-name = "Handwash"
-inst=noone
+check = false
+events = ds_list_create()
